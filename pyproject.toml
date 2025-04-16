@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "whitetrace"
+version = "0.1.0"
+description = "Convert images to white-on-transparent format"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+dependencies = [
+    "Pillow>=10.0.0",
+    "numpy>=1.24.0",
+    "cairosvg>=2.7.0",
+    "opencv-python>=4.8.0",
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "potrace>=0.1.0"
+]
+
+[project.scripts]
+whitetrace = "whitetrace.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["whitetrace"] 
